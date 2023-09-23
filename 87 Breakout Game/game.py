@@ -2,14 +2,14 @@
 import time
 from screen import screen, Painter
 from paddle import Paddle
-from blocks import BLOCKS
+from blocks import blocks
 from scoreboard import ScoreBoard
 from ball import Ball
 
 
 class Gamer:
     def __init__(self):
-        self.BLOCKS = BLOCKS
+        self.blocks = blocks
         self.GAME_IS_ON = True
         self.painter = Painter()
         self.painter.draw_background()
@@ -53,10 +53,10 @@ class Gamer:
                 self.ball.setheading(315)
 
     def check_for_block_collision(self):
-        for block in self.BLOCKS.copy():
+        for block in self.blocks.copy():
             if self.ball.distance(block) < 80:
                 block.hideturtle()
-                BLOCKS.remove(block)
+                blocks.remove(block)
                 screen.update()
 
                 self.scoreboard.add_point()
@@ -68,7 +68,7 @@ class Gamer:
             self.GAME_IS_ON = False
             self.scoreboard.game_over()
 
-        elif len(BLOCKS) == 0:
+        elif len(blocks) == 0:
             self.GAME_IS_ON = False
             self.scoreboard.game_over()
 

@@ -32,7 +32,7 @@ rows.append(Row(200, "blue"))
 rows.append(Row(100, "green"))
 
 # BLOCKS = [block for block in row.blocks for row in rows]
-BLOCKS = []
+blocks = []
 for row in rows:
     for block in row.blocks:
-        BLOCKS.append(block)
+        blocks.append(block)
