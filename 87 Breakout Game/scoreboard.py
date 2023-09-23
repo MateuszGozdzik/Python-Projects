@@ -22,3 +22,7 @@ class ScoreBoard(Turtle):
         self.goto(0, 0)
         self.write(f"Game Over.", move=False, 
         align='center', font=('Arial', 30, 'bold'))
+        self.goto(0,-40)
+        self.write(f"You've scored {self.score} points!", move=False, 
+        align='center', font=('Arial', 30, 'bold'))
+
