@@ -4,8 +4,8 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 # Init DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///cafes.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///cafes.db"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 
 
@@ -23,16 +23,19 @@ class Cafe(db.Model):
     coffee_price = db.Column(db.String(250), nullable=True)
 
     def to_dict(self):
-        return {column.name: getattr(self, column.name) for column in self.__table__.columns}
+        return {
+            column.name: getattr(self, column.name) for column in self.__table__.columns
+        }
+
 
 # with app.app_context():
 #     db.create_all()
+
 
 @app.route("/")
 def home():
     all_cafes = Cafe.query.all()
     return render_template("index.html", all_cafes=all_cafes)
-
 
 
 if __name__ == "__main__":

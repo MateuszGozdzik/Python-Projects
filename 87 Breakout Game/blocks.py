@@ -8,7 +8,6 @@ rows = []
 
 
 class Block(Turtle):
-    
     def __init__(self, color):
         super().__init__()
         self.shape("square")
@@ -18,17 +17,14 @@ class Block(Turtle):
         screen.update()
 
 
-class Row():
+class Row:
     def __init__(self, y_cor, color):
-    
         self.blocks = []
 
         for i in range(10):
             new_block = Block(color)
             new_block.goto(-675 + i * 150, y_cor)
             self.blocks.append(new_block)
-
-
 
 
 rows.append(Row(300, "red"))

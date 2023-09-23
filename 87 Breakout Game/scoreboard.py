@@ -12,17 +12,24 @@ class ScoreBoard(Turtle):
         self.add_point()
 
     def add_point(self):
-        self.score +=1
+        self.score += 1
         self.clear()
-        self.write(f"Score: {self.score}", move=False, 
-        align='center', font=('Arial', 30, 'bold'))
-
+        self.write(
+            f"Score: {self.score}",
+            move=False,
+            align="center",
+            font=("Arial", 30, "bold"),
+        )
 
     def game_over(self):
         self.goto(0, 0)
-        self.write(f"Game Over.", move=False, 
-        align='center', font=('Arial', 30, 'bold'))
-        self.goto(0,-40)
-        self.write(f"You've scored {self.score} points!", move=False, 
-        align='center', font=('Arial', 30, 'bold'))
-
+        self.write(
+            f"Game Over.", move=False, align="center", font=("Arial", 30, "bold")
+        )
+        self.goto(0, -40)
+        self.write(
+            f"You've scored {self.score} points!",
+            move=False,
+            align="center",
+            font=("Arial", 30, "bold"),
+        )

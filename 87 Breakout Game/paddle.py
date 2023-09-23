@@ -4,6 +4,7 @@ from screen import screen
 
 SPEED = 100
 
+
 class Paddle(Turtle):
     def __init__(self):
         super().__init__()
@@ -19,7 +20,6 @@ class Paddle(Turtle):
 
         self.segments.append(new_segment)
 
-
     def go_left(self):
         """Paddle goes left"""
         if self.xcor() > -650:
@@ -27,11 +27,9 @@ class Paddle(Turtle):
             self.forward(SPEED)
             screen.update()
 
-
     def go_right(self):
         """Paddle goes right"""
         if self.xcor() < 650:
             self.setheading(0)
             self.forward(SPEED)
             screen.update()
-

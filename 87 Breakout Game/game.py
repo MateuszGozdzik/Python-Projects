@@ -7,9 +7,7 @@ from scoreboard import ScoreBoard
 from ball import Ball
 
 
-
-class Gamer():
-
+class Gamer:
     def __init__(self):
         self.BLOCKS = BLOCKS
         self.GAME_IS_ON = True
@@ -23,10 +21,7 @@ class Gamer():
         self.screen.onkeypress(self.paddle.go_left, "Left")
         self.screen.onkeypress(self.paddle.go_right, "Right")
 
-
-
     def check_for_paddle_collision(self):
-
         if self.ball.distance(self.paddle) < 155 and self.ball.ycor() < -410:
             if self.ball.xcor() < self.paddle.xcor():
                 self.ball.setheading(135)
@@ -36,62 +31,52 @@ class Gamer():
             self.ball.move()
 
     def check_for_wall_collision(self):
-
-        #* Top
+        # * Top
         if self.ball.ycor() > 450:
             if self.ball.heading() == 45:
                 self.ball.setheading(315)
-            else: #ball.heading() == 135
+            else:  # ball.heading() == 135
                 self.ball.setheading(225)
 
-        #* Right
+        # * Right
         if self.ball.xcor() > 765:
             if self.ball.heading() == 45:
                 self.ball.setheading(135)
-            else: #ball.heading() == 315
+            else:  # ball.heading() == 315
                 self.ball.setheading(225)
 
-        #* Left
+        # * Left
         if self.ball.xcor() < -765:
             if self.ball.heading() == 135:
                 self.ball.setheading(45)
-            else: #ball.heading() == 225
+            else:  # ball.heading() == 225
                 self.ball.setheading(315)
-
 
     def check_for_block_collision(self):
         for block in self.BLOCKS.copy():
-            print(block)
             if self.ball.distance(block) < 80:
                 block.hideturtle()
                 BLOCKS.remove(block)
+                screen.update()
 
                 self.scoreboard.add_point()
                 self.ball.setheading(360 - self.ball.heading())
                 break
-        
+
     def check_for_game_over(self):
         if self.ball.ycor() < -450:
-            self.GAME_IS_ON= False
+            self.GAME_IS_ON = False
             self.scoreboard.game_over()
-        
+
         elif len(BLOCKS) == 0:
             self.GAME_IS_ON = False
             self.scoreboard.game_over()
-    
-    
+
     def game(self):
-
         while self.GAME_IS_ON:
-
             self.ball.move()
             time.sleep(0.05)
             self.check_for_paddle_collision()
             self.check_for_block_collision()
             self.check_for_wall_collision()
             self.check_for_game_over()
-
-gamer = Gamer()
-gamer.game()
-
-gamer.screen.exitonclick()
