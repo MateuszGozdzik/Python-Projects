@@ -1,0 +1,57 @@
+body {
+    background-color: #B05A7A;
+    margin: 0;
+}
+
+a {
+    color: #820000;
+    text-decoration: none;
+}
+
+nav a {
+    font-size: 2em;
+    font-weight: 600;
+}
+
+
+nav {
+    background-color: #EFA3C8;
+    padding: 20px;
+    text-align: center;
+    font-size: 3em;
+    font-weight: 800;
+}
+
+main {
+    border: 2px dotted #FF0032;
+    margin: 10vh 10vw;
+    min-height: 60vh;
+    border-radius: 20px;
+    border-width: 5px;
+}
+
+
+
+.add-todo, .todo {
+    border: 2px dotted #D6E4E5;
+    margin: 20px;
+    border-radius: 7px;
+    font-size: 1.5em;
+    border-width: 5px;
+    font-weight: 600;
+    color:  #5AB090;
+
+}
+
+#add-task {
+    background-color: #B05A7A;
+    border: none;
+    word-wrap: normal;
+    width: 100%;
+    font-weight: 600;
+    font-family: 'Roboto Mono', monospace;
+}
+
+::placeholder {
+    color: #182747;
+}

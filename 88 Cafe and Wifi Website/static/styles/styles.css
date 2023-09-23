@@ -1,0 +1,78 @@
+body {
+    background-color: #B09B71;
+    margin: 0;
+}
+
+/* NAV */
+
+.nav {
+    background-color: #3C2317;
+}
+
+ul {
+    padding-left: 0;
+    margin-top: 0;
+
+}
+
+li {
+    list-style: none;
+    display: inline-block;    
+}
+
+li a {
+    display: inline-block;
+    padding: 10px;
+    background-color: #562B08;
+    font-size: 2rem;
+   
+}
+
+a {
+    text-decoration: none;
+    color: black;  
+}
+
+.docs {
+    float:right;
+}
+
+/* TABLE */
+
+table {
+    width: 90vw;
+    margin: 20px auto;
+    font-size: 1.2em;
+    border-spacing: 0 1rem;
+}
+
+th {
+    background-color: #3C2A21;
+    color: #EEEEEE;
+}
+
+td {
+    text-align: center;
+}
+
+tr {
+    background-color: #AD8E70;
+}
+
+.cafe-name {
+    font-family: 'Handlee', cursive;
+}
+
+td a {
+    text-decoration: underline;
+}
+
+img {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+}
+
+
+
+
